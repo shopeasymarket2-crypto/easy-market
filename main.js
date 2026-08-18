@@ -15,10 +15,7 @@ function updateCart() {
   const items = document.getElementById("cartItems");
   const cartTotal = document.getElementById("cartTotal");
 
-  if (!cartCount || !items || !cartTotal) {
-    console.error("Cart element পাওয়া যায়নি");
-    return;
-  }
+  if (!cartCount || !items || !cartTotal) return;
 
   cartCount.textContent = cart.length;
 
@@ -40,7 +37,6 @@ function updateCart() {
         <div>
           <span>${index + 1}. ${item.name}</span>
         </div>
-
         <strong>
           ৳ ${Number(item.price).toLocaleString("bn-BD")}
         </strong>
@@ -55,10 +51,7 @@ function updateCart() {
 function openCart() {
   const modal = document.getElementById("cartModal");
 
-  if (!modal) {
-    console.error("cartModal পাওয়া যায়নি");
-    return;
-  }
+  if (!modal) return;
 
   modal.hidden = false;
   updateCart();
@@ -67,9 +60,9 @@ function openCart() {
 function closeCart() {
   const modal = document.getElementById("cartModal");
 
-  if (modal) {
-    modal.hidden = true;
-  }
+  if (!modal) return;
+
+  modal.hidden = true;
 }
 
 function checkout() {
@@ -94,11 +87,7 @@ function checkout() {
     `মোট: ৳${total.toLocaleString("bn-BD")}`
   ].join("\n");
 
-  /*
-
-  */
-
-  const whatsappNumber = window.open(`https://wa.me/8801576524569?text=${text}`, "_blank");;
+  const whatsappNumber = "8801576524569";
 
   const whatsappURL =
     "https://wa.me/" +
@@ -110,19 +99,19 @@ function checkout() {
 }
 
 function searchProducts() {
-  const query =
-    document.getElementById("searchInput").value
-      .trim()
-      .toLowerCase();
+  const input = document.getElementById("searchInput");
 
-  const products =
-    document.querySelectorAll(".product");
+  if (!input) return;
+
+  const query = input.value.trim().toLowerCase();
+
+  const products = document.querySelectorAll(".product");
 
   let found = 0;
 
   products.forEach(product => {
     const name =
-      product.dataset.name.toLowerCase();
+      (product.dataset.name || "").toLowerCase();
 
     const visible =
       !query || name.includes(query);
@@ -133,18 +122,19 @@ function searchProducts() {
     if (visible) found++;
   });
 
-  document.getElementById("noResults").hidden =
-    found !== 0;
+  const noResults = document.getElementById("noResults");
 
-  document
-    .getElementById("products")
-    .scrollIntoView({
-      behavior: "smooth"
-    });
+  if (noResults) {
+    noResults.hidden = found !== 0;
+  }
 }
 
 function showAll() {
-  document.getElementById("searchInput").value = "";
+  const input = document.getElementById("searchInput");
+
+  if (input) {
+    input.value = "";
+  }
 
   document
     .querySelectorAll(".product")
@@ -152,31 +142,13 @@ function showAll() {
       product.style.display = "";
     });
 
-  document.getElementById("noResults").hidden = true;
+  const noResults = document.getElementById("noResults");
+
+  if (noResults) {
+    noResults.hidden = true;
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   updateCart();
-});.empty-cart {
-  text-align: center;
-  color: #777;
-  padding: 20px 10px;
-}
-
-.cart-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  border-bottom: 1px solid #eee;
-  padding: 14px 0;
-}
-
-.cart-item span {
-  color: #222;
-}
-
-.cart-item strong {
-  white-space: nowrap;
-  color: #111;
-}
+});
