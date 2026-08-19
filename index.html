@@ -7,12 +7,18 @@
   <title>Easy Market | সহজে কেনাকাটা</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div class="topbar">🚚 সারা বাংলাদেশে ডেলিভারি • নিরাপদে অর্ডার করুন</div>
+
+  <div class="topbar">
+    🚚 সারা বাংলাদেশে ডেলিভারি • নিরাপদে অর্ডার করুন
+  </div>
 
   <header class="header">
-    <a class="brand" href="#">
-      <img src="logo.jpeg"
+
+    <a class="brand" href="#home">
+      <img src="logo.jpeg" alt="Easy Market Logo">
+
       <div>
         <strong>Easy Market</strong>
         <span>সহজে কেনাকাটা, সহজে জীবন</span>
@@ -20,148 +26,422 @@
     </a>
 
     <div class="search">
-      <input id="searchInput" type="search" placeholder="আপনি কী খুঁজছেন?">
-      <button type="button" onclick="searchProducts()">খুঁজুন</button>
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="আপনি কী খুঁজছেন?"
+      >
+
+      <button type="button" onclick="searchProducts()">
+        খুঁজুন
+      </button>
     </div>
 
-    <button class="cart-button" onclick="openCart()" aria-label="কার্ট">
-      🛒 <span>কার্ট</span><b id="cartCount">0</b>
+    <button
+      class="cart-button"
+      onclick="openCart()"
+      aria-label="কার্ট"
+    >
+      🛒 <span>কার্ট</span>
+      <b id="cartCount">0</b>
     </button>
+
   </header>
+
 
   <nav class="nav">
     <div class="nav-inner">
+
       <a class="active" href="#home">হোম</a>
+
       <a href="#categories">ক্যাটাগরি</a>
+
       <a href="#offers">বিশেষ অফার</a>
+
       <a href="#products">সকল পণ্য</a>
+
       <a href="#contact">যোগাযোগ</a>
+
     </div>
   </nav>
 
+
   <main>
+
+    <!-- HERO -->
+
     <section class="hero" id="home">
+
       <div class="hero-copy">
-        <span class="badge">🔥 আজকের বিশেষ অফার</span>
-        <h1>আপনার পছন্দের পণ্য,<br><em>এখন আরও সহজে।</em></h1>
-        <p>Easy Market-এ দৈনন্দিন প্রয়োজনীয় পণ্য খুঁজুন, পছন্দ করুন এবং সহজেই অর্ডার করুন।</p>
+
+        <span class="badge">
+          🔥 আজকের বিশেষ অফার
+        </span>
+
+        <h1>
+          আপনার পছন্দের পণ্য,
+          <br>
+          <em>এখন আরও সহজে।</em>
+        </h1>
+
+        <p>
+          Easy Market-এ দৈনন্দিন প্রয়োজনীয় পণ্য খুঁজুন,
+          পছন্দ করুন এবং সহজেই অর্ডার করুন।
+        </p>
+
         <div class="hero-actions">
-          <a href="#products" class="primary">কেনাকাটা শুরু করুন →</a>
-          <a href="#categories" class="secondary">ক্যাটাগরি দেখুন</a>
+
+          <a href="#products" class="primary">
+            কেনাকাটা শুরু করুন →
+          </a>
+
+          <a href="#categories" class="secondary">
+            ক্যাটাগরি দেখুন
+          </a>
+
         </div>
+
         <div class="trust">
+
           <span>✓ সহজ অর্ডার</span>
+
           <span>✓ দ্রুত ডেলিভারি</span>
+
           <span>✓ বিশ্বস্ত সেবা</span>
+
         </div>
+
       </div>
+
+
       <div class="hero-art">
-        <div class="discount">UP TO<br><strong>50%</strong><br>OFF</div>
-        <div class="hero-card">
-          <div class="hero-icon">🛍️</div>
-          <h3>Easy Market</h3>
-          <p>Smart shopping for everyone</p>
+
+        <div class="discount">
+          UP TO
+          <br>
+          <strong>50%</strong>
+          <br>
+          OFF
         </div>
+
+        <div class="hero-card">
+
+          <div class="hero-icon">
+            🛍️
+          </div>
+
+          <h3>
+            Easy Market
+          </h3>
+
+          <p>
+            Smart shopping for everyone
+          </p>
+
+        </div>
+
       </div>
+
     </section>
+
+
+    <!-- CATEGORY -->
 
     <section class="section" id="categories">
+
       <div class="section-heading">
+
         <div>
-          <span class="eyebrow">ক্যাটাগরি</span>
-          <h2>যা দরকার, সব এক জায়গায়</h2>
+
+          <span class="eyebrow">
+            ক্যাটাগরি
+          </span>
+
+          <h2>
+            যা দরকার, সব এক জায়গায়
+          </h2>
+
         </div>
-      </div>
-      <div class="categories">
-        <div class="categories" id="categoryGrid">
-      </div>
-    </section>
 
-    <section class="section offer-section" id="offers">
-      <div class="offer">
-        <div>
-          <span class="eyebrow">LIMITED OFFER</span>
-          <h2>আজকের ডিলে<br>বিশেষ ছাড়!</h2>
-          <p>নির্বাচিত পণ্যে সীমিত সময়ের জন্য আকর্ষণীয় মূল্য।</p>
-          <a href="#products" class="primary">অফার দেখুন →</a>
-        </div>
-        <div class="offer-price">-50%</div>
-      </div>
-    </section>
-
-    <section class="section" id="products">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">জনপ্রিয় পণ্য</span>
-          <h2>আপনার জন্য বাছাই করা</h2>
-        </div>
-        <button class="text-button" onclick="showAll()">সব পণ্য →</button>
       </div>
 
-      <div class="products" id="productGrid">
-        <article class="product" data-name="স্মার্ট ওয়াচ">
-          <div class="product-image">⌚</div>
-          <span class="tag">জনপ্রিয়</span>
-          <h3>স্মার্ট ওয়াচ</h3>
-          <p>ফিটনেস ও দৈনন্দিন ব্যবহারের জন্য</p>
-          <div class="product-bottom"><strong>৳ ১,৪৯০</strong><button onclick="addToCart('স্মার্ট ওয়াচ',1490)">কার্টে যোগ</button></div>
-        </article>
 
-        <article class="product" data-name="ওয়্যারলেস ইয়ারবাড">
-          <div class="product-image">🎧</div>
-          <span class="tag">নতুন</span>
-          <h3>ওয়্যারলেস ইয়ারবাড</h3>
-          <p>পরিষ্কার সাউন্ড, কমপ্যাক্ট ডিজাইন</p>
-          <div class="product-bottom"><strong>৳ ৯৯০</strong><button onclick="addToCart('ওয়্যারলেস ইয়ারবাড',990)">কার্টে যোগ</button></div>
-        </article>
+      <!-- এখানে JavaScript Category বসাবে -->
 
-        <article class="product" data-name="এয়ার ফ্রায়ার">
-          <div class="product-image">🍟</div>
-          <span class="tag">অফার</span>
-          <h3>এয়ার ফ্রায়ার</h3>
-          <p>কম তেলে সহজ রান্না</p>
-          <div class="product-bottom"><strong>৳ ৩,৪৯০</strong><button onclick="addToCart('এয়ার ফ্রায়ার',3490)">কার্টে যোগ</button></div>
-        </article>
+      <div
+        class="categories"
+        id="categoryGrid"
+      >
 
-        <article class="product" data-name="স্টাইলিশ ব্যাগ">
-          <div class="product-image">👜</div>
-          <span class="tag">হট</span>
-          <h3>স্টাইলিশ ব্যাগ</h3>
-          <p>দৈনন্দিন ব্যবহার ও ভ্রমণের জন্য</p>
-          <div class="product-bottom"><strong>৳ ১,১৯০</strong><button onclick="addToCart('স্টাইলিশ ব্যাগ',1190)">কার্টে যোগ</button></div>
-        </article>
+        <a href="#products" class="category">
+
+          🧴
+
+          <strong>
+            বিউটি
+          </strong>
+
+          <span>
+            সৌন্দর্য পণ্য
+          </span>
+
+        </a>
+
+
+        <a href="#products" class="category">
+
+          👕
+
+          <strong>
+            ফ্যাশন
+          </strong>
+
+          <span>
+            পোশাক ও স্টাইল
+          </span>
+
+        </a>
+
+
+        <a href="#products" class="category">
+
+          🏠
+
+          <strong>
+            হোম
+          </strong>
+
+          <span>
+            ঘরের প্রয়োজনীয়
+          </span>
+
+        </a>
+
+
+        <a href="#products" class="category">
+
+          📱
+
+          <strong>
+            ইলেকট্রনিক্স
+          </strong>
+
+          <span>
+            স্মার্ট গ্যাজেট
+          </span>
+
+        </a>
+
+
+        <a href="#products" class="category">
+
+          🍳
+
+          <strong>
+            কিচেন
+          </strong>
+
+          <span>
+            রান্নাঘরের পণ্য
+          </span>
+
+        </a>
+
+
+        <a href="#products" class="category">
+
+          🎁
+
+          <strong>
+            গিফট
+          </strong>
+
+          <span>
+            সবার জন্য উপহার
+          </span>
+
+        </a>
+
       </div>
-      <p id="noResults" class="no-results" hidden>দুঃখিত, এই নামে কোনো পণ্য পাওয়া যায়নি।</p>
-    </section>
-  </main>
 
-  <footer id="contact">
+
+     <!-- ================================
+     EASY MARKET CONTACT SECTION
+     ================================ -->
+
+<section class="section contact-section" id="contact">
+
+  <div class="section-heading">
     <div>
-      <strong>Easy Market</strong>
-      <p>সহজে কেনাকাটা, সহজে জীবন।</p>
-    </div>
-    <div>
-      <h4>যোগাযোগ</h4>
-      <p>📞 01XXXXXXXXX</p>
-      <p>✉️ easymarket@example.com</p>
-    </div>
-    <div>
-      <h4>সেবা</h4>
-      <p>🚚 ডেলিভারি</p>
-      <p>🔄 রিটার্ন নীতি</p>
-    </div>
-  </footer>
-
-  <div class="cart-modal" id="cartModal" hidden>
-    <div class="cart-box">
-      <button class="close" onclick="closeCart()">×</button>
-      <h2>আপনার কার্ট</h2>
-      <div id="cartItems"></div>
-      <div class="cart-total">মোট: <strong id="cartTotal">৳ ০</strong></div>
-      <button class="checkout" onclick="checkout()">অর্ডার করতে যোগাযোগ করুন</button>
+      <span class="eyebrow">যোগাযোগ</span>
+      <h2>আমাদের সাথে যোগাযোগ করুন</h2>
+      <p>অর্ডার, পণ্য বা যেকোনো তথ্যের জন্য যোগাযোগ করুন।</p>
     </div>
   </div>
 
-  <script src="main.js"></script>
-</body>
-</html>
+
+  <div class="contact-grid">
+
+
+    <!-- PHONE -->
+
+    <a
+      class="contact-card"
+      href="tel:01XXXXXXXXX"
+    >
+
+      <div class="contact-icon">
+        📞
+      </div>
+
+      <div>
+        <strong>ফোন করুন</strong>
+
+        <!-- এখানে নিজের ফোন নম্বর বসাবেন -->
+        <span>01XXXXXXXXX</span>
+      </div>
+
+    </a>
+
+
+    <!-- WHATSAPP -->
+
+    <a
+      class="contact-card"
+      href="https://wa.me/8801XXXXXXXXX"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <div class="contact-icon">
+        💬
+      </div>
+
+      <div>
+        <strong>WhatsApp</strong>
+
+        <!-- এখানে নিজের WhatsApp নম্বর বসাবেন -->
+        <span>WhatsApp-এ যোগাযোগ করুন</span>
+      </div>
+
+    </a>
+
+
+    <!-- EMAIL -->
+
+    <a
+      class="contact-card"
+      href="mailto:easymarket@example.com"
+    >
+
+      <div class="contact-icon">
+        ✉️
+      </div>
+
+      <div>
+        <strong>ইমেইল</strong>
+
+        <!-- এখানে নিজের Email বসাবেন -->
+        <span>easymarket@example.com</span>
+      </div>
+
+    </a>
+
+
+    <!-- FACEBOOK -->
+
+    <a
+      class="contact-card"
+      href="https://facebook.com/YOUR-FACEBOOK-ID"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <div class="contact-icon">
+        📘
+      </div>
+
+      <div>
+        <strong>Facebook</strong>
+
+        <!-- এখানে নিজের Facebook Link বসাবেন -->
+        <span>আমাদের Facebook Page</span>
+      </div>
+
+    </a>
+
+
+    <!-- ADDRESS -->
+
+    <div class="contact-card">
+
+      <div class="contact-icon">
+        📍
+      </div>
+
+      <div>
+        <strong>ঠিকানা</strong>
+
+        <!-- এখানে নিজের ঠিকানা বসাবেন -->
+        <span>আপনার ঠিকানা এখানে লিখুন</span>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ================================
+     FOOTER
+     ================================ -->
+
+<footer>
+
+  <div>
+
+    <strong>
+      Easy Market
+    </strong>
+
+    <p>
+      সহজে কেনাকাটা, সহজে জীবন।
+    </p>
+
+  </div>
+
+  <div>
+
+    <h4>
+      যোগাযোগ
+    </h4>
+
+    <p>
+      📞 01576524569
+    </p>
+
+    <p>
+      ✉️ shopeasymarket2@gmail.com
+    </p>
+
+  </div>
+
+  <div>
+
+    <h4>
+      সেবা
+    </h4>
+
+    <p>
+      🚚 ডেলিভারি
+    </p>
+
+    <p>
+      🔄 রিটার্ন নীতি
+    </p>
+
+  </div>
+
+</footer>
